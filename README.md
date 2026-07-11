@@ -37,4 +37,4 @@ This project recreates the core gameplay of Flappy Bird while demonstrating game
 
 ## Download
 
-Download the latest build from the **Releases** section.
+Download the latest build from the [**Releases**](https://github.com/marmeladka-23/endless-runner-prototype/releases/tag/v1.0) section.

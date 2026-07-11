@@ -34,3 +34,7 @@ This project recreates the core gameplay of Flappy Bird while demonstrating game
 - Obstacle spawning
 - Score system
 - Assets
+
+## Download
+
+Download the latest build from the **Releases** section.

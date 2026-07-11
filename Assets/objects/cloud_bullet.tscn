@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bbg08yfpwhr2x"]
+
+[ext_resource type="Script" uid="uid://b4px7841sooyu" path="res://scripts/cloud_bullet.gd" id="1_86ljt"]
+[ext_resource type="Texture2D" uid="uid://bqaqan7lq2vko" path="res://Assets/pictures/Vector 1.png" id="2_cae7j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wh52v"]
+size = Vector2(80, 48)
+
+[node name="CloudBullet" type="Area2D" unique_id=220981049]
+script = ExtResource("1_86ljt")
+
+[node name="Vector1" type="Sprite2D" parent="." unique_id=1052374700]
+position = Vector2(9.536743e-07, -9.536743e-07)
+rotation = 1.5707964
+scale = Vector2(0.5576923, 0.5576923)
+texture = ExtResource("2_cae7j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1515272318]
+shape = SubResource("RectangleShape2D_wh52v")

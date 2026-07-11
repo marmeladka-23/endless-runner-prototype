@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://cyi4img1xr8j8"]
+
+[ext_resource type="Texture2D" uid="uid://d2rxo4tn45pum" path="res://Assets/pictures/Airbrush-Image-Enhancer-1761145410610 1.png" id="1_ca42v"]
+[ext_resource type="Script" uid="uid://sdtkodpc0xch" path="res://scripts/obstacle_spawner.gd" id="2_rysoc"]
+[ext_resource type="PackedScene" uid="uid://brk40ndukdfvc" path="res://Assets/objects/obstacle.tscn" id="3_ssvqc"]
+[ext_resource type="PackedScene" uid="uid://dkfdice6rp45v" path="res://Assets/objects/obstacle_1.tscn" id="4_264po"]
+[ext_resource type="PackedScene" uid="uid://26h5mq6fl1vl" path="res://Assets/objects/player.tscn" id="5_1kice"]
+[ext_resource type="PackedScene" uid="uid://dnkimijb6y5ti" path="res://Assets/objects/player_bullet.tscn" id="6_5newe"]
+[ext_resource type="Texture2D" uid="uid://cfpk73laknwjs" path="res://Assets/pictures/Study.png" id="7_37s47"]
+[ext_resource type="Script" uid="uid://fym23qfxwrhh" path="res://scripts/sprite_2d.gd" id="8_bt5mj"]
+[ext_resource type="Script" uid="uid://de2wc37aodksq" path="res://scripts/item_spawner.gd" id="9_e1j6l"]
+[ext_resource type="PackedScene" uid="uid://cqw0lp7eqtqov" path="res://Assets/objects/collectible_item.tscn" id="10_pl11u"]
+[ext_resource type="Script" uid="uid://dl0ibm7w020n2" path="res://scripts/UIManager.gd" id="11_bhx41"]
+[ext_resource type="FontFile" uid="uid://uk2vsj2j735t" path="res://Assets/pictures/RubikBubbles-Regular.ttf" id="12_qnb83"]
+[ext_resource type="PackedScene" uid="uid://b4k0r1cknsc0m" path="res://Assets/objects/enemy_spawner.tscn" id="13_sww3w"]
+[ext_resource type="PackedScene" uid="uid://6wucj15404aa" path="res://Assets/objects/storm_cloud.tscn" id="14_suyxu"]
+[ext_resource type="PackedScene" uid="uid://ctkcqgxrmbj7k" path="res://Assets/objects/health_ui.tscn" id="15_sgl2t"]
+[ext_resource type="Texture2D" uid="uid://cyrr0he0yx1gs" path="res://Assets/pictures/ddf.png" id="16_qouja"]
+
+[node name="game" type="Node2D" unique_id=484659708]
+
+[node name="back" type="Sprite2D" parent="." unique_id=1788647623]
+position = Vector2(960.00006, 540.00006)
+texture = ExtResource("1_ca42v")
+
+[node name="ObstacleSpawner" type="Node2D" parent="." unique_id=1126210443]
+script = ExtResource("2_rysoc")
+obstacle_scenes = Array[PackedScene]([ExtResource("3_ssvqc"), ExtResource("4_264po")])
+spawn_interval = 1.485
+
+[node name="player" parent="." unique_id=968094914 instance=ExtResource("5_1kice")]
+position = Vector2(448, 512)
+bullet_scene = ExtResource("6_5newe")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1878846564]
+position = Vector2(650.2293, 642)
+scale = Vector2(0.5624999, 0.5624998)
+texture = ExtResource("7_37s47")
+script = ExtResource("8_bt5mj")
+
+[node name="ItemSpawner" type="Node2D" parent="." unique_id=84067196]
+script = ExtResource("9_e1j6l")
+collectible_scene = ExtResource("10_pl11u")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="." unique_id=1239382374]
+script = ExtResource("11_bhx41")
+
+[node name="ScoreLabel" type="Label" parent="CanvasGroup" unique_id=1137733320]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 848.0
+offset_top = 56.0
+offset_right = 1072.0
+offset_bottom = 141.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("12_qnb83")
+theme_override_font_sizes/font_size = 71
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="HighScoreLabel" type="Label" parent="CanvasGroup" unique_id=1286547156]
+offset_left = 1632.0
+offset_top = 24.0
+offset_right = 1672.0
+offset_bottom = 85.0
+theme_override_fonts/font = ExtResource("12_qnb83")
+theme_override_font_sizes/font_size = 51
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="EnemySpawner" parent="." unique_id=1656099837 instance=ExtResource("13_sww3w")]
+enemy_scene = ExtResource("14_suyxu")
+
+[node name="HealthUI" parent="." unique_id=1762997042 instance=ExtResource("15_sgl2t")]
+visible = false
+full_heart_texture = ExtResource("16_qouja")
+empty_heart_texture = ExtResource("16_qouja")

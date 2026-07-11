@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dkfdice6rp45v"]
+
+[ext_resource type="Script" uid="uid://cmamplf7w4w7q" path="res://scripts/obstacle.gd" id="1_dnddi"]
+[ext_resource type="Texture2D" uid="uid://jaiqlwupbwb5" path="res://Assets/pictures/image 3.png" id="2_jcbfx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p60oa"]
+radius = 49.07826
+height = 254.05217
+
+[node name="obstacle_1" type="Area2D" unique_id=1392250914]
+script = ExtResource("1_dnddi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1861896740]
+position = Vector2(4.7683716e-07, 2.3841858e-07)
+scale = Vector2(0.34638554, 0.32228917)
+texture = ExtResource("2_jcbfx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1743117874]
+position = Vector2(2.1175822e-22, -1.4210855e-14)
+rotation = 1.5707964
+scale = Vector2(0.32228917, 0.34638554)
+shape = SubResource("CapsuleShape2D_p60oa")

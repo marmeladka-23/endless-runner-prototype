@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://6wucj15404aa"]
+
+[ext_resource type="Script" uid="uid://prf11budw5s2" path="res://scripts/storm_cloud.gd" id="1_0x6kv"]
+[ext_resource type="Texture2D" uid="uid://4fr00n31o13w" path="res://Assets/pictures/ChatGPT_Image_25_._2025_._02_02_38.webp" id="2_5hth5"]
+[ext_resource type="PackedScene" uid="uid://bbg08yfpwhr2x" path="res://Assets/objects/cloud_bullet.tscn" id="2_w3cxm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w3cxm"]
+radius = 48.0
+height = 106.0
+
+[node name="StormCloud" type="Area2D" unique_id=1376694942]
+script = ExtResource("1_0x6kv")
+bullet_scene = ExtResource("2_w3cxm")
+
+[node name="cloud" type="Sprite2D" parent="." unique_id=574745055]
+position = Vector2(2.3841858e-07, 9.536743e-07)
+scale = Vector2(0.12499995, 0.12499995)
+texture = ExtResource("2_5hth5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1255325812]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_w3cxm")
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=287926996]

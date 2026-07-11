@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ctkcqgxrmbj7k"]
+
+[ext_resource type="Script" uid="uid://b8mutc6ppg1cj" path="res://scripts/health_ui.gd" id="1_nwlpg"]
+[ext_resource type="Texture2D" uid="uid://cyrr0he0yx1gs" path="res://Assets/pictures/ddf.png" id="2_iy3an"]
+
+[node name="HealthUI" type="CanvasLayer" unique_id=1601398216]
+script = ExtResource("1_nwlpg")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1406976617]
+clip_contents = true
+offset_left = 19.0
+offset_top = 19.0
+offset_right = 288.0
+offset_bottom = 99.0
+
+[node name="Heart1" type="TextureRect" parent="HBoxContainer" unique_id=578299013]
+layout_mode = 2
+texture = ExtResource("2_iy3an")
+
+[node name="Heart2" type="TextureRect" parent="HBoxContainer" unique_id=1343404401]
+layout_mode = 2
+texture = ExtResource("2_iy3an")
+
+[node name="Heart3" type="TextureRect" parent="HBoxContainer" unique_id=1609216372]
+layout_mode = 2
+texture = ExtResource("2_iy3an")

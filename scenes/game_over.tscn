@@ -1,0 +1,170 @@
+[gd_scene format=3 uid="uid://do2pve2u3e0am"]
+
+[ext_resource type="Texture2D" uid="uid://ghtlc8nyi60x" path="res://Assets/pictures/game_over_back.png" id="1_56v3a"]
+[ext_resource type="FontFile" uid="uid://uk2vsj2j735t" path="res://Assets/pictures/RubikBubbles-Regular.ttf" id="2_o57t2"]
+[ext_resource type="Texture2D" uid="uid://dnrlf0wjfject" path="res://Assets/pictures/Rectangle 4.png" id="3_uq3qu"]
+[ext_resource type="Texture2D" uid="uid://bl7grmy7ook2p" path="res://Assets/pictures/Кнопка_Роз.png" id="4_0p6qk"]
+[ext_resource type="Texture2D" uid="uid://def2eryupkvbe" path="res://Assets/pictures/Rectangle 5.png" id="5_s4bmq"]
+[ext_resource type="Script" uid="uid://blqxg8vtius77" path="res://scripts/button_exit.gd" id="6_r8nfu"]
+[ext_resource type="Texture2D" uid="uid://vbatm2unk4yo" path="res://Assets/pictures/Button_purple.png" id="7_vumy4"]
+[ext_resource type="Texture2D" uid="uid://dmt8v8by2s2ox" path="res://Assets/pictures/Button_purple_bright.png" id="8_jlwav"]
+[ext_resource type="Texture2D" uid="uid://bp4ghm8weqesa" path="res://Assets/pictures/Button_purple_dark.png" id="9_oye1b"]
+[ext_resource type="Script" uid="uid://bw5s2ua83awq5" path="res://scripts/button_play.gd" id="10_u27yo"]
+[ext_resource type="Script" uid="uid://dl0ibm7w020n2" path="res://scripts/UIManager.gd" id="11_qllq4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lmfuw"]
+texture = ExtResource("3_uq3qu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k7c8f"]
+texture = ExtResource("4_0p6qk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y0fv6"]
+texture = ExtResource("5_s4bmq")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jhou3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3xhsb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7eg23"]
+texture = ExtResource("7_vumy4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0o5rp"]
+texture = ExtResource("8_jlwav")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_didoo"]
+texture = ExtResource("9_oye1b")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_psfuu"]
+
+[node name="game_over" type="Node2D" unique_id=725037130]
+
+[node name="GameOverBack" type="Sprite2D" parent="." unique_id=1253320263]
+position = Vector2(959.99994, 540)
+scale = Vector2(1, 1.0000001)
+texture = ExtResource("1_56v3a")
+
+[node name="Button_exit" type="Button" parent="." unique_id=88482934]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 792.0
+offset_top = 824.0
+offset_right = 1124.8
+offset_bottom = 928.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_o57t2")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxTexture_lmfuw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_k7c8f")
+theme_override_styles/hover = SubResource("StyleBoxTexture_y0fv6")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jhou3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3xhsb")
+text = "ВЫХОД"
+script = ExtResource("6_r8nfu")
+
+[node name="Button_play" type="Button" parent="." unique_id=1285662686]
+anchors_preset = -1
+anchor_bottom = 0.5
+offset_left = 792.0
+offset_top = 536.0
+offset_right = 1128.0
+offset_bottom = 640.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_fonts/font = ExtResource("2_o57t2")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxTexture_7eg23")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0o5rp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_didoo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_psfuu")
+text = "ЕЩЕ РАЗОК"
+script = ExtResource("10_u27yo")
+target_scene = "uid://cyi4img1xr8j8"
+
+[node name="HighScoreLabel" type="Label" parent="." unique_id=27248623]
+visible = false
+offset_left = 552.0
+offset_top = 80.0
+offset_right = 592.0
+offset_bottom = 141.0
+theme_override_fonts/font = ExtResource("2_o57t2")
+theme_override_font_sizes/font_size = 51
+
+[node name="FinalScoreLabel" type="Label" parent="." unique_id=2074868710]
+visible = false
+offset_left = 552.0
+offset_top = 160.0
+offset_right = 592.0
+offset_bottom = 239.0
+theme_override_fonts/font = ExtResource("2_o57t2")
+theme_override_font_sizes/font_size = 61
+
+[node name="CanvasGroup" type="CanvasGroup" parent="." unique_id=1518895177]
+script = ExtResource("11_qllq4")
+
+[node name="ScoreLabel" type="Label" parent="CanvasGroup" unique_id=785126981]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 464.0
+offset_top = 184.0
+offset_right = 688.0
+offset_bottom = 269.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_o57t2")
+theme_override_font_sizes/font_size = 71
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="HighScoreLabel" type="Label" parent="CanvasGroup" unique_id=304515211]
+offset_left = 824.0
+offset_top = 336.0
+offset_right = 864.0
+offset_bottom = 397.0
+theme_override_fonts/font = ExtResource("2_o57t2")
+theme_override_font_sizes/font_size = 51
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="." unique_id=659548086]
+offset_left = 320.0
+offset_top = 144.0
+offset_right = 1600.0
+offset_bottom = 336.0
+theme_override_fonts/font = ExtResource("2_o57t2")
+theme_override_font_sizes/font_size = 161
+text = "Вы проиграли!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button_menu" type="Button" parent="." unique_id=1228344406]
+anchors_preset = -1
+anchor_bottom = 0.5
+offset_left = 792.0
+offset_top = 680.0
+offset_right = 1124.7999
+offset_bottom = 784.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_fonts/font = ExtResource("2_o57t2")
+theme_override_font_sizes/font_size = 67
+theme_override_styles/normal = SubResource("StyleBoxTexture_7eg23")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0o5rp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_didoo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_psfuu")
+text = "МЕНЮ"
+script = ExtResource("10_u27yo")
+target_scene = "uid://cmbq1f75spbem"

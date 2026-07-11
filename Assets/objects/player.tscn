@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://26h5mq6fl1vl"]
+
+[ext_resource type="Script" uid="uid://cn1xd2wfqg8su" path="res://scripts/player.gd" id="1_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://3gk48w12awta" path="res://Assets/pictures/Cat_die.png" id="2_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://ft2pkhh7nkwy" path="res://Assets/pictures/Cat_0.png" id="3_dw050"]
+[ext_resource type="Texture2D" uid="uid://crdlo3855do3k" path="res://Assets/pictures/Cat_1.png" id="4_b26j0"]
+[ext_resource type="Texture2D" uid="uid://seojoscneqmu" path="res://Assets/pictures/Cat_2.png" id="5_n7ghd"]
+[ext_resource type="Texture2D" uid="uid://furc2pr2j6mi" path="res://Assets/pictures/Cat_3.png" id="6_nvl01"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ivps1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1jxqw")
+}],
+"loop": 1,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dw050")
+}, {
+"duration": 0.91,
+"texture": ExtResource("4_b26j0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_n7ghd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_b26j0")
+}],
+"loop": 1,
+"name": &"fly",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_nvl01")
+}],
+"loop": 1,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_urp6f"]
+size = Vector2(833.3913, 514.26086)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hs0m"]
+size = Vector2(94, 59)
+
+[node name="player" type="CharacterBody2D" unique_id=402099085]
+script = ExtResource("1_2hs0m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=9732624]
+scale = Vector2(0.115, 0.115)
+sprite_frames = SubResource("SpriteFrames_ivps1")
+animation = &"fly"
+frame_progress = 0.12145027
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1307141083]
+position = Vector2(-15.92, 2.4299998)
+scale = Vector2(0.115, 0.115)
+shape = SubResource("RectangleShape2D_urp6f")
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=1673017427]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=514577119]
+position = Vector2(-17, 2.5)
+shape = SubResource("RectangleShape2D_2hs0m")

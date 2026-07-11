@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cqw0lp7eqtqov"]
+
+[ext_resource type="Script" uid="uid://deesy712mw4xe" path="res://scripts/collectible_item.gd" id="1_sh2v4"]
+[ext_resource type="Texture2D" uid="uid://bi5w1n702bbg8" path="res://Assets/pictures/image 7.png" id="2_b5ob8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wss7"]
+size = Vector2(75.5503, 118.72189)
+
+[node name="CollectibleItem" type="Area2D" unique_id=207230406]
+script = ExtResource("1_sh2v4")
+item_type = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=332806251]
+position = Vector2(9.536743e-07, 9.536743e-07)
+scale = Vector2(0.74122804, 0.74122804)
+texture = ExtResource("2_b5ob8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1953981457]
+position = Vector2(4.0000076, 3.9999874)
+scale = Vector2(0.7412282, 0.7412282)
+shape = SubResource("RectangleShape2D_4wss7")

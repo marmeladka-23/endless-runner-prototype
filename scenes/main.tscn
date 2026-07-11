@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://cmbq1f75spbem"]
+
+[ext_resource type="Texture2D" uid="uid://d2rxo4tn45pum" path="res://Assets/pictures/Airbrush-Image-Enhancer-1761145410610 1.png" id="1_ya4ey"]
+[ext_resource type="Texture2D" uid="uid://di4d015krbh1y" path="res://Assets/pictures/Airbrush-Image-Enhancer-1761145410610 2.png" id="2_eb6dy"]
+[ext_resource type="FontFile" uid="uid://uk2vsj2j735t" path="res://Assets/pictures/RubikBubbles-Regular.ttf" id="3_trceg"]
+[ext_resource type="Texture2D" uid="uid://vbatm2unk4yo" path="res://Assets/pictures/Button_purple.png" id="4_a8y0u"]
+[ext_resource type="Texture2D" uid="uid://dmt8v8by2s2ox" path="res://Assets/pictures/Button_purple_bright.png" id="5_jkv2x"]
+[ext_resource type="Texture2D" uid="uid://bp4ghm8weqesa" path="res://Assets/pictures/Button_purple_dark.png" id="6_jbj1t"]
+[ext_resource type="Script" uid="uid://bw5s2ua83awq5" path="res://scripts/button_play.gd" id="7_muem4"]
+[ext_resource type="Texture2D" uid="uid://dnrlf0wjfject" path="res://Assets/pictures/Rectangle 4.png" id="8_dp3eg"]
+[ext_resource type="Texture2D" uid="uid://bl7grmy7ook2p" path="res://Assets/pictures/Кнопка_Роз.png" id="9_0ld40"]
+[ext_resource type="Texture2D" uid="uid://def2eryupkvbe" path="res://Assets/pictures/Rectangle 5.png" id="10_gqmmt"]
+[ext_resource type="Script" uid="uid://blqxg8vtius77" path="res://scripts/button_exit.gd" id="11_yc10j"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_272bh"]
+texture = ExtResource("4_a8y0u")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5vw27"]
+texture = ExtResource("5_jkv2x")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7mycd"]
+texture = ExtResource("6_jbj1t")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lquwl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_efxa6"]
+texture = ExtResource("8_dp3eg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dg77c"]
+texture = ExtResource("9_0ld40")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ycdy4"]
+texture = ExtResource("10_gqmmt")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w48qg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vivmo"]
+
+[node name="main_menu" type="Node2D" unique_id=588977348]
+
+[node name="back" type="Sprite2D" parent="." unique_id=27186522]
+position = Vector2(959.99994, 539.99994)
+scale = Vector2(1, 0.99999994)
+texture = ExtResource("1_ya4ey")
+
+[node name="back_1" type="Sprite2D" parent="." unique_id=435716695]
+position = Vector2(1224, 336)
+scale = Vector2(1.1582446, 0.9638274)
+texture = ExtResource("2_eb6dy")
+
+[node name="name" type="Label" parent="." unique_id=1064086979]
+anchors_preset = -1
+anchor_left = -2.4620001
+anchor_top = -3.4290001
+anchor_bottom = -3.4290001
+offset_left = 448.0
+offset_top = 160.0
+offset_right = 1476.0
+offset_bottom = 492.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_trceg")
+theme_override_font_sizes/font_size = 280
+text = "Cat Fly"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button_play" type="Button" parent="." unique_id=725674126]
+anchors_preset = -1
+anchor_bottom = 0.5
+offset_left = 792.0
+offset_top = 600.0
+offset_right = 1124.8
+offset_bottom = 704.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_fonts/font = ExtResource("3_trceg")
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxTexture_272bh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5vw27")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7mycd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lquwl")
+text = "ИГРАТЬ"
+script = ExtResource("7_muem4")
+target_scene = "uid://cyi4img1xr8j8"
+
+[node name="Button_exit" type="Button" parent="." unique_id=786320020]
+offset_left = 792.0
+offset_top = 760.0
+offset_right = 1124.8
+offset_bottom = 864.0
+theme_override_fonts/font = ExtResource("3_trceg")
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxTexture_efxa6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dg77c")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ycdy4")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_w48qg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vivmo")
+text = "ВЫХОД"
+script = ExtResource("11_yc10j")

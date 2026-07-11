@@ -12,7 +12,7 @@ This project recreates the core gameplay of Flappy Bird while demonstrating game
 
 ## Gameplay
 
-![Gameplay](assets/pictures/GamePlay.mp4)
+![Gameplay](assets/pictures/GamePlayS.mp4)
 
 ## Features
 

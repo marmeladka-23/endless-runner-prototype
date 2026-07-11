@@ -12,7 +12,7 @@ This project recreates the core gameplay of Flappy Bird while demonstrating game
 
 ## Gameplay
 
-![Gameplay](assets/pictures/GamePlay.gif)
+![Gameplay](assets/pictures/GamePlay_compressed.gif)
 
 ## Features
 

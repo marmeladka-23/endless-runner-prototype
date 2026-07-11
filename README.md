@@ -12,7 +12,7 @@ This project recreates the core gameplay of Flappy Bird while demonstrating game
 
 ## Gameplay
 
-![Gameplay](assets/pictures/GamePlay_compressed.gif)
+![Gameplay](https://raw.githubusercontent.com/marmeladka-23/endless-runner-prototype/refs/heads/main/Assets/pictures/GamePlay.gif)
 
 ## Features
 
